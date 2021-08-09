@@ -1,0 +1,100 @@
+  <!--
+        ----------- CALENDAR'S FUNCTIONAL REQUIREMENTS ----------- -> ANALYSIS
+        - show the days inside a monthly container
+        - user can click on a day to select it
+        - a selected day should be highlighted somehow
+        - user should see meetings assigned to the currently selected day
+        - user should be able to add a new meeting to the selected day
+        - meeting info should include meeting time and meeting description
+        - we should display a new day that has been entered as soon as it is created
+        - show a dropdown menu for the time picker
+        
+        -- NICE TO HAVE
+        - if a day has some meetings assigned it should be distinguishalbe somehow
+        - user should be able to delete a meeting
+        - we want to persist the data the user put in
+        - we have to read persisted data as soon as we load the calendar
+        
+        -- NICE TO HAVE THAT WOULD BE NICE TO HAVE
+        - user should be able to move across several months
+        - we should display the actual days for the selected month (and the month/year)
+        - we should display the day-of-the-week for each day
+        - user could modify a meeting data
+        
+        ----------- THINGS THAT WE HAVE TO IMPLEMENT ----------- -> DESIGN
+        -- HTML ELEMENTS
+        - a container for the month itself
+        - the days themselves (dynamically generated)
+        - a header for the month
+        - a container for the meetings (of the selected day)
+        - the actual meetings
+        - a container for "create a new meeting" section
+        - some inputs to collect new meeting details
+        -- CSS STYLES
+        - generic day
+        - currently selected day
+        - days that have some meetings assigned
+        - style for: inputs / meetings
+        -- FUNCTIONS
+        - get the current month
+        - get the number of days that the current month has
+        - create as many days as we need
+        - select a day (when user clicks on it)
+        - we should structure our day/meeting related data in order to be able to access them individually
+        - create a new meeting based on the user input
+        - every day should have from 0 to N meetings assigned to
+        - display all meetings for the selected day
+        - delete a meeting
+        - store/retrieve meeting data from the disk
+        - style each day properly (IE: selected or not/has meetings...)
+        - modify meeting details (also show them into editable field)        
+    -->
+
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        
+        <!-- own css -->
+        <link rel="stylesheet" href="calendar.css">
+        <title>Strive Calendar</title>
+      </head>
+      <body>
+        <div class="container">
+            
+            <div class="row-col-12">
+                <h1 class="text-center mt-3">STRIVE CALENDAR</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <!-- calendar -->
+                <div class="col-6">
+                    <!-- create the container with calendar - main container -->
+                    <div id="month-Container">
+                        <!-- create the date dynamically using js -->
+                    </div>
+                </div>
+                <!-- to do list  -->
+                <div class="col-3">
+                    <h4 class="text-center mb-0 pb-0">To Do List </h4>
+                    <hr>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <!-- own js -->
+        <script src="calendar.js"></script>
+      </body>
+    </html>
